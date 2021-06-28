@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookes2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/3814284ee8.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+  <nav class="navbar bg-dark navbar-dark navbar-expand-md">
+ 　<a class="navbar-brand" href="/">Bookers</a>
+ 　<button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content">
+     <span class="navbar-toggler-icon"></span></button>
+　<div id="navbar-content" class="collapse navbar-collapse">
+　<ul class="navbar-nav ml-auto text-light">
+    
+    <li class="nav-item mr-3"><i class="fas fa-home">Home</i></li>
+    <li class="nav-item mr-3"><i class="fas fa-paperclip">About</i></li>
+    <li class="nav-item mr-3"><i class="fas fa-user-plus">sign up</i></li>
+    <li class="nav-item"><i class="fas fa-sign-in-alt">login</i></li>
+</ul>
+</div>
+</nav>
+    
+    <%= yield %>
+    
+    
+
+
+  </body>
+</html>
