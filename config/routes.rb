@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   # get 'books/create'
   # get 'homes/top'
   root 'homes#top'
+  get'home/about' =>'homes#about'
   devise_for :users
   resources :books, only: [:new, :create, :index, :show, :destroy]
-  resources :users, only: [:show]
+  resources :users, only: [:show,:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

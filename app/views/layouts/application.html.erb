@@ -11,17 +11,28 @@
   </head>
 
   <body>
+  
   <nav class="navbar bg-dark navbar-dark navbar-expand-md">
  　<a class="navbar-brand" href="/">Bookers</a>
  　<button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content">
      <span class="navbar-toggler-icon"></span></button>
 　<div id="navbar-content" class="collapse navbar-collapse">
-　<ul class="navbar-nav ml-auto text-light">
+　<ul class="navbar-nav ml-auto">
     
-    <li class="nav-item mr-3"><i class="fas fa-home">Home</i></li>
-    <li class="nav-item mr-3"><i class="fas fa-paperclip">About</i></li>
-    <li class="nav-item mr-3"><i class="fas fa-user-plus">sign up</i></li>
-    <li class="nav-item"><i class="fas fa-sign-in-alt">login</i></li>
+    
+    
+    <% if user_signed_in? %>
+    <li class="nav-item mr-3"><%= link_to "Home",user_path(current_user.id),class:"fas fa-home text-light" %></li>
+    <li class="nav-item mr-3"><%= link_to "Users",users_path,class:"fas fa-paperclip text-light" %></li>
+    <li class="nav-item mr-3"><%=link_to "Books",new_user_registration_path,class:"fas fa-user-plus text-light" %></li>
+    <li class="nav-item"><%= link_to "logout", destroy_user_session_path, method: :delete,class:'nav-link text-light fas fa-sign-out-alt' %></li>
+    
+    <% else %>
+    <li class="nav-item mr-3"><%= link_to "Home","/",class:"fas fa-home text-light" %></li>
+    <li class="nav-item mr-3"><%= link_to "About","/home/about",class:"fas fa-paperclip text-light" %></li>
+    <li class="nav-item mr-3"><%=link_to "sign up",new_user_registration_path,class:"fas fa-user-plus text-light" %></li>
+    <li class="nav-item"><%=link_to"log in",new_user_session_path,class:"fas fa-sign-in-alt text-light" %></li>
+    <% end %>
 </ul>
 </div>
 </nav>
@@ -30,6 +41,12 @@
     
     
 
+ 
+    
+
 
   </body>
+  
+  <footer class="container">
+      <p class="text-center mt-5">CopyRight Infratop.inc</p></footer>
 </html>
